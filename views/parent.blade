@@ -1,0 +1,18 @@
+hr
+hr
+hr
+div(style="margin-left:20px;background:#eee;")
+ h2 parent.blade
+ -var localVarToExpose = 'I am a local variable expressed in parent.blade, declared with VAR, and exposed to child.blade in an include'
+ -globalVar = 'I am a global variable expressed in parent.blade, declared without VAR.  No need to expose this variable: since I am global, all templates can see anyway.'
+ hr
+ h3 Parent template including non-dynamically ...
+ p Non-dynamic include with expose works correctly.  Local variables, argument variables, and global variables are all available in child.  Try deleting one of the "exposing" variable in the code below.  It creates an error, which proves that exposing is actually doing something.
+ include 'child' exposing localVarToExpose, jsVarToExpose
+ hr
+ h3 Parent template including dynamically ...
+ p Dynamic include with expose does not work correctly.  Local variables exposed are not available to child. But they are availabe regardless of whether or not they are exposed. Argument and global variables are availabe to child.
+ p Uncomment the last list of child.blade to see that localVarToExpose is not available although it is exposed below.
+ p Re-comment the last line of child.blade.  Now in parent.blade remove " exposing localVarToExpose, jsVarToExpose" from the include below.  The same variables are available to child.blade whether or not anything is exposed.
+ -var dynamicTemplate = 'child'
+ include dynamicTemplate exposing localVarToExpose, jsVarToExpose
