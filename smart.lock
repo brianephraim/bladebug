@@ -11,8 +11,8 @@
     "packages": {
       "blade": {
         "git": "https://github.com/bminer/meteor-blade.git",
-        "tag": "v3.2.2meteor2",
-        "commit": "1d7e6fd1287261a8f14da88e3ad829eb3195ef95"
+        "tag": "v3.2.6meteor1",
+        "commit": "f0810fd031781c84a9b5a14fd84c5b9d060ab336"
       }
     }
   }

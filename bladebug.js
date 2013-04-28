@@ -12,7 +12,7 @@ if (Meteor.isClient) {
   });
   Meteor.startup(function () {
     $("body").append(Meteor.render(Template.parent({
-      jsVarToExpose:'I am a variable assigned to the parent.blade Template from the javascript file as an argument.'
+      //jsVarToExpose:'I am a variable assigned to the parent.blade Template from the javascript file as an argument.'
     })) );
   });
 
